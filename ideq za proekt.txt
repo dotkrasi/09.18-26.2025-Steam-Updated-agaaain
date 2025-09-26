@@ -1,0 +1,134 @@
+ideq za proekt: Steam
+---------------------
+users: id, name , password, email, balance(pari v akaunta), library(igri koito ima)   - 1
+games: id, name, genre(genreId), description, price, developer, publisher, rating,  -2
+genres: id, name  - 3
+reviews: id, userId, gameId, description, rating(1-10), date  -4
+discounts: id , gameId, discountPercent, start date, end date
+bundles: id, name, games, price
+Wishlist: id, userid, gameid
+achievements: id, gameId, title, description, point
+transactions: id, userid, gameid, pricepaid, date
+
+
+info:
+
+games: 
+ 
+ dota 2; publisher - Blizzard Entertainment, Inc., developer: Blizzard Entertainment, Inc.,              genre - FPS
+
+ cs-2; publisher - valve, developer - valve, genre - FPS
+
+ pugb; publisher - KRAFTON, Inc., developer - PUBG Corporation, genre - FPS
+
+ Baldur's gate 3; publisher - Larian Studios, developer - Larian Studios, genre - RPG
+
+ rocket league; publisher - Psyonix LLC, developer - Psyonix LLC, genre - Car simulation indie
+
+ team fortress 2; publisher - valve, developer - valve, genre - FPS
+
+ dead by daylight; publisher - Behaviour Interactive Inc., developer - Behaviour Interactive Inc., genre - survival horror
+
+ borderlands 4; publisher - 2K, developer - Gearbox Software, genre - RPG
+
+ apex legesnds; publisher - Electronic Arts, developer - Respawn, genre - FPS
+
+ hollow knight; publisher - Team Cherry, developer - Team Cherry, genre - Action-adventure
+
+ rust; publisher - Facepunch Studios, developer - Facepunch Studios, genre - FPS, survival
+
+ lost ark; publisher - Amazon Games, developer - Smilegate RPG, genre - MMORPG
+
+ war thunder; publisher - Gaijin Network Ltd, developer - Gaijin Entertainment, genre - MMO
+
+ warframe; publisher - Digital Extremes, developer - Digital Extremes, genre - MMORPG
+
+ brawlhalla; publisher - Ubisoft, developer - Blue Mammoth Games, genre - Indie
+
+ garry's mod; publisher - Valve, developer - Facepunch Studios, genre - FPS, Indie 
+
+ the binding of Isaac: repentance; publisher - Nicalis, Inc, developer - Nicalis, Inc., Edmund McMillen, genre - roguelike, shooter, adventure
+
+ geometry dash; publisher - RobTop Games, developer - RobTop Games, genre - Platform, Indie
+
+ GTA V; publisher - Rockstar Games, developer - Rockstar North, genre - Open world, FPS, Action-adventure 
+
+ red dead redemption 2; publisher - Rockstar Games, developer - Rockstar Games, genre - Open world, Action Adventure, Western
+
+
+
+
+
+register/login system
+
+
+queries:
+
+
+add game to steam
+delete game from steam
+add review to game
+add genre to game
+(user)buy game with balance
+
+
+🔹 Users
+
+Регистрация на нов потребител → AddUser(name, email, password, balance)
+
+Влизане (Login) → CheckUser(email, password)
+
+Добавяне на игра в библиотека → AddGameToLibrary(userId, gameId)
+
+Показване на библиотеката на потребител → GetUserLibrary(userId)
+
+Попълване на баланс (Add Funds) → AddBalance(userId, amount)
+
+🔹 Games
+
+Добавяне на нова игра в Steam → AddGame(title, desc, price, genreId, developer, publisher)
+
+Показване на всички игри → GetAllGames()
+
+Показване на игри по жанр → GetGamesByGenre(genreName)
+
+Търсене на игра по име (като в Search bar) → SearchGames(keyword)
+
+Показване на най-високо оценени игри (Top Rated) → GetTopRatedGames()
+
+🔹 Reviews
+
+Добавяне на ревю за игра → AddReview(userId, gameId, desc, rating)
+
+Показване на всички ревюта за игра → GetReviewsForGame(gameId)
+
+Показване на ревюта, написани от потребител → GetReviewsByUser(userId)
+
+Изчисляване на средна оценка за игра → GetAverageRating(gameId)
+
+🔹 Bundles
+
+Създаване на bundle → AddBundle(name, games, price)
+
+Показване на всички bundles → GetAllBundles()
+
+Добавяне на bundle към библиотеката на потребител → BuyBundle(userId, bundleId)
+
+🔹 Genres
+
+Добавяне на нов жанр → AddGenre(name)
+
+Списък с всички жанрове → GetAllGenres()
+
+
+
+AddGameToLibrary(userId, gameId)
+GetUserLibrary(userId)
+(Add Funds) → AddBalance(userId, amount)
+GetGamesByGenre(genreName)
+(като в Search bar) → SearchGames(keyword)
+(Top Rated) → GetTopRatedGames()
+GetReviewsForGame(gameId)
+GetReviewsByUser(userId)
+GetAverageRating(gameId)
+BuyBundle(userId, bundleId)
